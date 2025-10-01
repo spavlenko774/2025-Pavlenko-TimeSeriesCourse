@@ -7,7 +7,6 @@ from modules.utils import z_normalize
 class PairwiseDistance:
     """
     Distance matrix between time series 
-
     Parameters
     ----------
     metric: distance metric between two time series
@@ -24,7 +23,6 @@ class PairwiseDistance:
     @property
     def distance_metric(self) -> str:
         """Return the distance metric
-
         Returns
         -------
             string with metric which is used to calculate distances between set of time series
