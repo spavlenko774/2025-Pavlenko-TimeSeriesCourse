@@ -49,14 +49,9 @@ class PairwiseDistance:
 
         dist_func = None
 
-        if self.metric == 'euclidean':
-            return ED_distance
-        elif self.metric == 'norm_euclidean':
-            return norm_ED_distance
-        elif self.metric == 'dtw':
-            return DTW_distance
-        else:
-            raise ValueError("Unsupported metric. Choose 'euclidean', 'norm_euclidean' or 'dtw'.")
+        # INSERT YOUR CODE
+
+        return dist_func
 
 
     def calculate(self, input_data: np.ndarray) -> np.ndarray:
@@ -74,18 +69,6 @@ class PairwiseDistance:
         matrix_shape = (input_data.shape[0], input_data.shape[0])
         matrix_values = np.zeros(shape=matrix_shape)
         
-        matrix_shape = (input_data.shape[0], input_data.shape[0])
-        matrix_values = np.zeros(shape=matrix_shape)
-
-        if self.is_normalize:
-            input_data = np.array([z_normalize(ts) for ts in input_data])
-
-        dist_func = self._choose_distance()
-
-        for i in range(input_data.shape[0]):
-            for j in range(i, input_data.shape[0]):
-                distance = dist_func(input_data[i], input_data[j])
-                matrix_values[i, j] = distance
-                matrix_values[j, i] = distance
+        # INSERT YOUR CODE
 
         return matrix_values

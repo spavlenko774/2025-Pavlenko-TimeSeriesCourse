@@ -66,16 +66,7 @@ class TimeSeriesHierarchicalClustering:
         self: the fitted model
         """
 
-        self.model = AgglomerativeClustering(
-          n_clusters=self.n_clusters,
-          metric='precomputed',
-          linkage=self.method,
-          compute_distances=True
-        )
-
-        self.model.fit(distance_matrix)
-
-        self.linkage_matrix = self._create_linkage_matrix()
+       # INSERT YOUR CODE
 
         return self
 
@@ -95,7 +86,7 @@ class TimeSeriesHierarchicalClustering:
 
         self.fit(distance_matrix)
 
-        return self.model.labels_
+        return self.labels_
 
 
     def _draw_timeseries_allclust(self, dx: pd.DataFrame, labels: np.ndarray, leaves: list[int], gs: gridspec.GridSpec, ts_hspace: int) -> None:
